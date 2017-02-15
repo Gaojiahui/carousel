@@ -1,22 +1,15 @@
-body,ul,li{
-	margin: 0;
-	padding: 0;
-}
-body{
-	font-size: 13px;
-	color: white;
-	background-color: black;
-}
 
-#box{
+
+.zy-slide{
 	/*两个 section (前一张、后一张)要做相对定位*/
+	font-size: 13px;
 	position: relative;
 	width: 754px;
 	height: 292px;
 	margin: 115px auto 0;
 }
 
-#box .prev,#box .next{
+.zy-slide .zy-prev,.zy-slide .zy-next{
 	position: absolute;
 	top: 50%;
 	width: 40px;
@@ -26,21 +19,25 @@ body{
 	text-align: center;
 	cursor: pointer;
 }
-#box .prev{
+.zy-slide .zy-prev{
 	left: -60px;
 }
-#box .next{
+.zy-slide .zy-next{
 	right: -60px;
 }
-#box ul{
+.zy-slide ul{
 	/*让7个li 相对父标签做相对定位*/
+	padding: 0;
+	margin: 0;
 	position: relative;
 	width: 754px;
 	height: 292px;
 	
 }
 
-#box li{
+.zy-slide li{
+	padding: 0;
+	margin: 0;
 	position: absolute;
 	border: 2px solid black;
 	list-style: none;
@@ -54,9 +51,8 @@ body{
 	cursor: pointer;
 	overflow: hidden;
 }
-#box li img{
+.zy-slide li img{
 	width: 100%;
 	height: 100%;
 	border-radius: 5px;
-	
 }
