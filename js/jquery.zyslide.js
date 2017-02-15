@@ -95,7 +95,10 @@ $(function(){
 			slide(ele,options);
 		})
 		console.log(this);
+		// 支持链式调用 需要有返回值
+		return this;
 	}
+	
 })(jQuery)
 
 /*
