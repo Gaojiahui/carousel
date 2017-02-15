@@ -16,17 +16,18 @@ $(function(){
 	// 也就是说只会产生一个轮播图，这个函数的作用域只能分配一个轮播图
 	// 所以要求每次调用都务必把当前轮播图的根标签传递过来。
 	// 这里的形参 ele 就是某个轮播图的根标签 
-	var slide = function(ele){
+	var slide = function(ele,options){
 		// 把根标签转化为jquery标签对象
 		var $ele = $(ele);
 		// 默认设置选项
 		var setting = {
 			// 控制刚开始展开需要的时间
-			dalay:1000,
+			delay:1000,
 			// 控制轮播的 速度事件
 			speed:2000,
 		};
-		
+		// 对象合并 
+		$.extend(true,setting,options);
 		//轮播图代码
 		// 先规定好每张图片的位置和状态
 		var states = [
@@ -89,9 +90,9 @@ $(function(){
 		});
 	}
 	// 找到要轮播的轮播图的标签；调用 slide 方法
-	$.fn.zySlide = function(){
+	$.fn.zySlide = function(options){
 		$(this).each(function(i,ele){
-			slide(ele);
+			slide(ele,options);
 		})
 		console.log(this);
 	}
